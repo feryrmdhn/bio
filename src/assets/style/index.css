@@ -1,0 +1,36 @@
+.typewriter-text {
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* pure class from typeriter */
+.Typewriter__cursor {
+    color: #9d9d9d;
+    font-size: 50px;
+}
+
+.btn-go:hover {
+    background: none !important;
+    transform: translate(7px, 0)
+}
+
+.fadeInUp {
+    animation: fadeInUp 1s ease backwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translate(0px, 100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+}
+
+.company-icon {
+    width: 2.2em;
+    height: 2.2em;
+}
