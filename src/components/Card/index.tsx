@@ -6,9 +6,10 @@ import { Jobs } from "../../types";
 const CardJobs: FC<Jobs> = ({ name, href }) => {
     const textHover = useColorModeValue('black', '#d1d100')
     const textColor = useColorModeValue('gray.600', 'white')
+    const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
 
     return (
-        <Box maxW='sm' borderWidth='1px' h={120} borderRadius='lg' overflow='hidden'>
+        <Box maxW='sm' border={`1px solid ${borderColor}`} h={120} borderRadius='lg' overflow='hidden'>
             <Link to={`/work/${href as string}`}>
                 <Center
                     h='120px'

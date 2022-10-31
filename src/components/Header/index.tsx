@@ -24,6 +24,7 @@ import {
     MoonIcon,
     SunIcon,
 } from '@chakra-ui/icons';
+import { NavLink } from 'react-router-dom';
 import { NavItem } from '../../types';
 
 const Header: FC = () => {
@@ -82,6 +83,7 @@ const Header: FC = () => {
     );
 }
 
+
 const DesktopNav = () => {
     const linkColor = useColorModeValue('gray.600', '#d1d100');
     const linkHoverColor = useColorModeValue('gray.800', '#9a9a1a');
@@ -94,12 +96,15 @@ const DesktopNav = () => {
                     <Popover trigger={'hover'} placement={'bottom-start'}>
                         <PopoverTrigger>
                             <Link
-                                fontFamily={'sans-serif'}
+                                as={NavLink}
+                                end
+                                to={navItem.href as string}
                                 p={2}
-                                href={navItem.href ?? '#'}
+                                fontFamily={'sans-serif'}
                                 fontSize={'md'}
                                 letterSpacing={1.5}
                                 color={linkColor}
+                                _activeLink={{ fontWeight: 'bold' }}
                                 _focus={{
                                     background: 'none'
                                 }}
@@ -252,7 +257,12 @@ const NAV_ITEMS: Array<NavItem> = [
         href: '/work'
     },
     {
+        label: 'Blog',
+        href: '/blog'
+    },
+    {
         label: 'Contact',
+        href: 'notfound',
         children: [
             {
                 label: 'Whatsapp',

@@ -19,7 +19,8 @@ const Footer: FC = () => {
         },
         {
             label: "Medium",
-            icon: <FontAwesomeIcon icon={faMedium} />
+            icon: <FontAwesomeIcon icon={faMedium} />,
+            href: 'https://medium.com/@feryramadhanc_'
         }
     ]
 

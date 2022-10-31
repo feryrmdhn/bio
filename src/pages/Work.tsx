@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, Container, Flex, Grid, GridItem, Heading, Text, Tooltip, useColorModeValue } from "@chakra-ui/react";
-import { myJob, skillTools } from "../utils/mockData";
+import { myJob, skillTools } from "../data/mockData";
 import CardJobs from "../components/Card";
 
 const Work: FC = () => {

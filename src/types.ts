@@ -39,3 +39,10 @@ export interface Jobs {
     name: string;
     href?: string;
 }
+
+export interface Articles {
+    id: number;
+    title: string;
+    date: string;
+    href: string;
+}
