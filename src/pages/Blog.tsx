@@ -1,29 +1,31 @@
-import { FC } from "react";
-import { Box, Container, Heading, Link, List, ListItem, Text, useColorModeValue } from "@chakra-ui/react";
+import { FC, useState } from "react";
+import { Box, Button, Center, Container, Heading, Link, List, ListItem, Text, useColorModeValue } from "@chakra-ui/react";
 import { Articles } from "../types";
 
+const article: Array<Articles> = [
+    {
+        id: 1,
+        title: 'Zustand React Tutorial — Pengganti Redux (?)',
+        date: 'Feb 20, 2022',
+        href: 'https://medium.com/@feryramadhanc_/zustand-react-tutorial-pengganti-redux-abc0e384bbbe'
+    },
+    {
+        id: 2,
+        title: 'Easy! Cara menghubungkan Metamask wallet dengan React',
+        date: 'May 29, 2022',
+        href: 'https://medium.com/@feryramadhanc_/easy-cara-menghubungkan-metamask-wallet-dengan-react-6450aa8cd575'
+    }
+]
+
 const Blog: FC = () => {
+    const [limit, setLimit] = useState(5)
     const colorText = useColorModeValue('black', 'white')
     const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
 
-    const article: Array<Articles> = [
-        {
-            id: 1,
-            title: 'Zustand React Tutorial — Pengganti Redux (?)',
-            date: 'Feb 20, 2022',
-            href: 'https://medium.com/@feryramadhanc_/zustand-react-tutorial-pengganti-redux-abc0e384bbbe'
-        },
-        {
-            id: 2,
-            title: 'Easy! Cara menghubungkan Metamask wallet dengan React',
-            date: 'May 29, 2022',
-            href: 'https://medium.com/@feryramadhanc_/easy-cara-menghubungkan-metamask-wallet-dengan-react-6450aa8cd575'
-        }
-    ]
 
     return (
         <>
-            <Box h={'full'} py={75} px={4}>
+            <Box h={'full'} pt={5}>
                 <Container maxW='container.lg' px={6} color={useColorModeValue('gray.600', '#d1d100')}>
                     <Heading
                         as='h2'
@@ -38,12 +40,12 @@ const Blog: FC = () => {
                             fontSize={18}
                             fontFamily={'monospace'}
                             color={colorText}
-                            mb={5}
+                            mb={7}
                         >
                             I also wrote some articles that might help some people. Especially in the field of web development.
                         </Text>
                         <List>
-                            {article.map((list) => (
+                            {article.slice(0, limit).map((list) => (
                                 <ListItem key={list.id} mb={6} pb={3} borderBottom={`1px solid ${borderColor}`}>
                                     <Link
                                         href={list.href}
@@ -62,6 +64,13 @@ const Blog: FC = () => {
                                 </ListItem>
                             ))}
                         </List>
+                        <Center>
+                            {article.length > 5 ?
+                                <Button variant={'outline'} size={'sm'} onClick={() => setLimit(limit + 2)}>Load More...</Button>
+                                :
+                                null
+                            }
+                        </Center>
                     </div>
                 </Container>
             </Box>

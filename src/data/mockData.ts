@@ -1,4 +1,4 @@
-import { Jobs, ToolsIcon } from "../types";
+import { Certificate, Jobs, ToolsIcon } from "../types";
 
 export const skillTools: Array<ToolsIcon> = [
     {
@@ -68,8 +68,8 @@ export const skillTools: Array<ToolsIcon> = [
     },
     {
         id: 14,
-        icon: require('../assets/img/icon/webpack.png'),
-        text: 'Webpack'
+        icon: require('../assets/img/icon/postman.png'),
+        text: 'Postman'
     },
     {
         id: 15,
@@ -128,17 +128,17 @@ export const myJob: Array<Jobs> = [
     {
         id: 1,
         name: 'Middleware Admin Panel',
-        href: 'middleware'
+        href: 'Middleware'
     },
     {
         id: 2,
         name: 'TLaunchpad Admin Panel',
-        href: 'tlaunchpad'
+        href: 'Tlaunchpad'
     },
     {
         id: 3,
         name: 'Kriptoversity Admin Panel',
-        href: 'kriptoversity'
+        href: 'Kriptoversity'
     },
     {
         id: 4,
@@ -149,5 +149,48 @@ export const myJob: Array<Jobs> = [
         id: 5,
         name: 'Serpul Admin Panel',
         href: 'Serpul'
+    },
+    {
+        id: 6,
+        name: 'Kickin App',
+        href: 'Kickin'
+    }
+]
+
+export const myCerfitiface: Array<Certificate> = [
+    {
+        id: 1,
+        title: 'Node (Basic)',
+        award: 'Hackerrank',
+        href: 'https://www.hackerrank.com/certificates/b548bf122937',
+        date: 'Nov 2022'
+    },
+    {
+        id: 2,
+        title: 'Javascript (Basic)',
+        award: 'Hackerrank',
+        href: 'https://www.hackerrank.com/certificates/649b4a3fba2a',
+        date: 'Mar 2022'
+    },
+    {
+        id: 3,
+        title: 'Problem Solving (Basic)',
+        award: 'Hackerrank',
+        href: 'https://www.hackerrank.com/certificates/5275453ed6e2',
+        date: 'Sep 2021'
+    },
+    {
+        id: 4,
+        title: 'React (Basic)',
+        award: 'Hackerrank',
+        href: 'https://www.hackerrank.com/certificates/f606a3ed992c',
+        date: 'Oct 2021'
+    },
+    {
+        id: 5,
+        title: 'English Level Test',
+        award: 'EF Set',
+        href: 'https://www.efset.org/cert/LVXeAD',
+        date: 'Jul 2020'
     }
 ]

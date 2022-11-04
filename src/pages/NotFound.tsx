@@ -4,7 +4,7 @@ import { Box, Container, Heading, useColorModeValue } from "@chakra-ui/react";
 const NotFound: FC = () => {
     return (
         <>
-            <Box h={'full'} py={75} px={4}>
+            <Box h={'full'} pt={5}>
                 <Container maxW='container.lg' px={6} color={useColorModeValue('gray.600', '#d1d100')}>
                     <Heading
                         as='h2'

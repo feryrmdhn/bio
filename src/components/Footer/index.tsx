@@ -7,7 +7,7 @@ import { faMedium, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-ico
 
 const Footer: FC = () => {
 
-    let footerSocmed: Array<Socmed> = [
+    const footerSocmed: Array<Socmed> = [
         {
             label: "LinkedIn",
             icon: <FontAwesomeIcon icon={faLinkedin} />,
@@ -20,7 +20,7 @@ const Footer: FC = () => {
         {
             label: "Medium",
             icon: <FontAwesomeIcon icon={faMedium} />,
-            href: 'https://medium.com/@feryramadhanc_'
+            href: 'https://medium.com/@feryramadhanc_   '
         }
     ]
 
@@ -50,7 +50,7 @@ const Footer: FC = () => {
                     fontFamily={'monospace'}
                     lineHeight='80px'
                     fontSize={14}
-                    color={useColorModeValue('gray.600', '#d1d100')}
+                    color={useColorModeValue('black', '#d1d100')}
                 >
                     &copy;Fery_Ramadhan
                 </Text>

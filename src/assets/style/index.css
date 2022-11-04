@@ -34,3 +34,10 @@
     width: 2.2em;
     height: 2.2em;
 }
+
+.test {
+    color: red;
+    background-color: red;
+    background: red;
+    border-color: red;
+}

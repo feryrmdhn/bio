@@ -40,9 +40,25 @@ export interface Jobs {
     href?: string;
 }
 
+export interface JobDetails {
+    slug: string;
+    desc: string;
+    image?: Array<ReactElement<any>>;
+    frontend?: Array<string>;
+    backend?: Array<string>;
+}
+
 export interface Articles {
     id: number;
     title: string;
     date: string;
     href: string;
+}
+
+export interface Certificate {
+    id: number;
+    title: string;
+    award: string;
+    href?: string;
+    date: string;
 }

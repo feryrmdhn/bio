@@ -1,14 +1,20 @@
-import { FC } from "react";
-import { Box, Container, Flex, Grid, GridItem, Heading, Text, Tooltip, useColorModeValue } from "@chakra-ui/react";
-import { myJob, skillTools } from "../data/mockData";
+import { FC, useState } from "react";
+import { Box, Button, Center, Container, Flex, Grid, GridItem, Heading, Link, List, ListItem, Text, Tooltip, useColorModeValue } from "@chakra-ui/react";
+import { myCerfitiface, myJob, skillTools } from "../data/mockData";
 import CardJobs from "../components/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAward } from "@fortawesome/free-solid-svg-icons";
 
 const Work: FC = () => {
+    const [limitJob, setLimitJob] = useState(6)
+    const [limitCertify, setLimitCertify] = useState(5)
     const colorText = useColorModeValue('black', 'white')
+    const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
+    const iconCertifColor = useColorModeValue('gray.600', 'white')
 
     return (
         <>
-            <Box h={'full'} py={75} px={4}>
+            <Box h={'full'} pt={5}>
                 <Container maxW='container.lg' px={6} color={useColorModeValue('gray.600', '#d1d100')}>
                     <Heading
                         as='h2'
@@ -25,22 +31,80 @@ const Work: FC = () => {
                             color={colorText}
                             mb={5}
                         >
-                            Here you can see an example of a project that I have made, can't be visited because most of it is confidential.
+                            Here you can see the projects I have made, some can't be visited because most of them are confidential.
                         </Text>
                         <Grid
-                            mb={6}
-                            templateColumns={[null, null, 'repeat(4, 1fr)']}
+                            mb={10}
+                            templateColumns={[null, null, 'repeat(3, 1fr)']}
                             gap={6}
                         >
-                            {myJob.map(item => (
+                            {myJob.slice(0, limitJob).map(item => (
                                 <GridItem key={item.id}>
-                                    <CardJobs
-                                        name={item.name}
-                                        href={item.href}
-                                    />
+                                    <CardJobs name={item.name} href={item.href} />
                                 </GridItem>
                             ))}
                         </Grid>
+                        <Center>
+                            {myJob.length > 6 ?
+                                <Button variant={'outline'} size={'sm'} mb={10} onClick={() => setLimitJob(limitJob + 2)}>Load More...</Button>
+                                :
+                                null
+                            }
+                        </Center>
+                        <Heading
+                            as='h4'
+                            textAlign={'center'}
+                            mb={4}
+                            fontFamily={'sans-serif'}
+                            fontSize='2xl'
+                            color={useColorModeValue('gray.600', '#d1d100')}
+                        >
+                            Certify
+                        </Heading>
+                        <Text
+                            fontSize={14}
+                            fontFamily={'monospace'}
+                            color={colorText}
+                            textAlign={'center'}
+                            mb={10}
+                        >
+                            I have received several awards in the form of certificates.
+                        </Text>
+                        <List mb={5}>
+                            {myCerfitiface.slice(0, limitCertify).map((list) => (
+                                <Flex key={list.id}>
+                                    <FontAwesomeIcon icon={faAward} size={'2x'} color={iconCertifColor} />
+                                    <ListItem mb={6} ml={6} pb={3} w={'100%'} borderBottom={`1px solid ${borderColor}`}>
+                                        <Link href={list.href} fontSize={20}>
+                                            {list.title}
+                                        </Link>
+                                        <Flex pt={2}>
+                                            <Text
+                                                color={colorText}
+                                                fontSize={14}
+                                                fontWeight={'bold'}
+                                            >
+                                                {list.award}
+                                            </Text>
+                                            &nbsp; &bull; &nbsp;
+                                            <Text
+                                                color={colorText}
+                                                fontSize={14}
+                                            >
+                                                {list.date}
+                                            </Text>
+                                        </Flex>
+                                    </ListItem>
+                                </Flex>
+                            ))}
+                        </List>
+                        <Center>
+                            {myCerfitiface.length > 5 ?
+                                <Button variant={'outline'} size={'sm'} mb={10} onClick={() => setLimitCertify(limitCertify + 2)}>Load More...</Button>
+                                :
+                                null
+                            }
+                        </Center>
                         <Heading
                             as='h4'
                             textAlign={'center'}
@@ -51,7 +115,7 @@ const Work: FC = () => {
                         >
                             Skill/Tools
                         </Heading>
-                        <Box>
+                        <Box mb={5}>
                             <Text
                                 fontSize={14}
                                 fontFamily={'monospace'}

@@ -1,69 +1,70 @@
-import { FC } from "react";
-import { Box, Container, Flex, Heading, List, Link, ListItem, Text, useColorModeValue } from "@chakra-ui/react";
+import { FC, useState } from "react";
+import { Box, Container, Flex, Heading, List, Link, ListItem, Text, useColorModeValue, Button, Center } from "@chakra-ui/react";
 import { Experience } from "../types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFaceGrinWide, faLocationDot, faMedal, faPersonRunning, faUser } from "@fortawesome/free-solid-svg-icons";
 import '../assets/style/index.css'
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+
+let works: Array<Experience> = [
+    {
+        icon: <img src={require('../assets/img/TC.png')} className='company-icon' alt='Tokocrytpo' />,
+        title: 'Frontend Developer',
+        company: 'Tokocrypto',
+        status: 'Remote Fulltime',
+        time: 'Jan 2022 - Present',
+        location: 'South Jakarta, DKI Jakarta',
+        href: 'https://www.tokocrypto.com/'
+    },
+    {
+        icon: <img src={require('../assets/img/RG.png')} className='company-icon' alt='Ruangguru' />,
+        title: 'Frontend Mentor',
+        company: 'Ruangguru',
+        status: 'Remote Freelance',
+        time: 'Feb 2022 - Mar 2022',
+        location: 'South Jakarta, DKI Jakarta',
+        href: 'https://www.ruangguru.com/'
+    },
+    {
+        icon: <img src={require('../assets/img/Kio.png')} className='company-icon' alt='Kioser' />,
+        title: 'Software Engineer (Frontend)',
+        company: 'Kioser',
+        status: 'Fulltime',
+        time: 'Nov 2020 - Jan 2022',
+        location: 'Makassar, South Sulawesi',
+        href: 'https://kioser.com/'
+    },
+    {
+        icon: <img src={require('../assets/img/Gl.png')} className='company-icon' alt='Glints' />,
+        title: 'Frontend Developer',
+        company: 'Glints Indonesia',
+        status: 'Internship',
+        time: 'Apr 2020 - Jul 2020',
+        location: 'Batam, Kepulauan Riau',
+        href: 'https://glints.com/id'
+    },
+    {
+        icon: <img src={require('../assets/img/Gsi.jpeg')} className='company-icon' alt='GSI' />,
+        title: 'Cost Control',
+        company: 'GSI',
+        status: 'Contract',
+        time: 'Aug 2019 - Jan 2020',
+        location: 'Kolaka, Southeast Sulawesi',
+        href: 'http://www.gsicorp.co.id/'
+    },
+    {
+        icon: <img src={require('../assets/img/hor.png')} className='company-icon' alt='Horison' />,
+        title: 'IT Officer',
+        company: 'Hotel Horison',
+        status: 'Fulltime',
+        time: 'Des 2018 - Apr 2019',
+        location: 'Makassar, South Sulawesi',
+        href: 'https://myhorison.com/hotelprofile/view?hotel=horison-ultima-makassar'
+    }
+]
 
 const About: FC = () => {
     const colorText = useColorModeValue('black', 'white')
-
-    let works: Array<Experience> = [
-        {
-            icon: <img src={require('../assets/img/TC.png')} className='company-icon' alt='Tokocrytpo' />,
-            title: 'Frontend Developer',
-            company: 'Tokocrypto',
-            status: 'Remote Fulltime',
-            time: 'Jan 2022 - Present',
-            location: 'South Jakarta, DKI Jakarta',
-            href: 'https://www.tokocrypto.com/'
-        },
-        {
-            icon: <img src={require('../assets/img/RG.png')} className='company-icon' alt='Ruangguru' />,
-            title: 'Frontend Mentor',
-            company: 'Ruangguru',
-            status: 'Remote Freelance',
-            time: 'Feb 2022 - Mar 2022',
-            location: 'South Jakarta, DKI Jakarta',
-            href: 'https://www.ruangguru.com/'
-        },
-        {
-            icon: <img src={require('../assets/img/Kio.png')} className='company-icon' alt='Kioser' />,
-            title: 'Frontend Developer',
-            company: 'Kioser',
-            status: 'Fulltime',
-            time: 'Nov 2020 - Jan 2022',
-            location: 'Makassar, South Sulawesi',
-            href: 'https://kioser.com/'
-        },
-        {
-            icon: <img src={require('../assets/img/Gl.png')} className='company-icon' alt='Glints' />,
-            title: 'Frontend Developer',
-            company: 'Glints Indonesia',
-            status: 'Internship',
-            time: 'Apr 2020 - Jul 2020',
-            location: 'Batam, Kepulauan Riau',
-            href: 'https://glints.com/id'
-        },
-        {
-            icon: <img src={require('../assets/img/Gsi.jpeg')} className='company-icon' alt='GSI' />,
-            title: 'Cost Control',
-            company: 'GSI',
-            status: 'Contract',
-            time: 'Aug 2019 - Jan 2020',
-            location: 'Kolaka, Southeast Sulawesi',
-            href: 'http://www.gsicorp.co.id/'
-        },
-        {
-            icon: <img src={require('../assets/img/hor.png')} className='company-icon' alt='Horison' />,
-            title: 'IT Officer',
-            company: 'Hotel Horison',
-            status: 'Fulltime',
-            time: 'Des 2018 - Apr 2019',
-            location: 'Makassar, South Sulawesi',
-            href: 'https://myhorison.com/hotelprofile/view?hotel=horison-ultima-makassar'
-        }
-    ]
+    const [limit, setLimit] = useState(6)
 
     const Titlejob = ({ children }: any) => {
         return <Heading
@@ -79,7 +80,7 @@ const About: FC = () => {
 
     return (
         <>
-            <Box h={'full'} py={75} px={4}>
+            <Box h={'full'} pt={5}>
                 <Container maxW='container.lg'>
                     <Heading
                         as='h2'
@@ -118,34 +119,34 @@ const About: FC = () => {
                             Summary :
                         </Heading>
                         <Box mb={5}>
-                            <List px={50}>
-                                <ListItem>
+                            <List px={10}>
+                                <ListItem mb={2}>
                                     <Flex flex={{ base: 1 }} justify={{ md: 'start' }}>
-                                        <FontAwesomeIcon icon={faCaretRight} />
+                                        <FontAwesomeIcon icon={faUser} width={15} />
                                         <Text ml={10}>The first child</Text>
                                     </Flex>
                                 </ListItem>
-                                <ListItem>
+                                <ListItem mb={2}>
                                     <Flex flex={{ base: 1 }} justify={{ md: 'start' }}>
-                                        <FontAwesomeIcon icon={faCaretRight} />
+                                        <FontAwesomeIcon icon={faMedal} width={15} />
                                         <Text ml={10}>Bachelor</Text>
                                     </Flex>
                                 </ListItem>
-                                <ListItem>
+                                <ListItem mb={2}>
                                     <Flex flex={{ base: 1 }} justify={{ md: 'start' }}>
-                                        <FontAwesomeIcon icon={faCaretRight} />
+                                        <FontAwesomeIcon icon={faLocationDot} width={15} />
                                         <Text ml={10}>Makassar tribe</Text>
                                     </Flex>
                                 </ListItem>
-                                <ListItem>
+                                <ListItem mb={2}>
                                     <Flex flex={{ base: 1 }} justify={{ md: 'start' }}>
-                                        <FontAwesomeIcon icon={faCaretRight} />
+                                        <FontAwesomeIcon icon={faFaceGrinWide} width={15} />
                                         <Text ml={10}>Playful</Text>
                                     </Flex>
                                 </ListItem>
-                                <ListItem>
+                                <ListItem mb={2}>
                                     <Flex flex={{ base: 1 }} justify={{ md: 'start' }}>
-                                        <FontAwesomeIcon icon={faCaretRight} />
+                                        <FontAwesomeIcon icon={faPersonRunning} width={15} />
                                         <Text ml={10}>Love Sports</Text>
                                     </Flex>
                                 </ListItem>
@@ -161,9 +162,9 @@ const About: FC = () => {
                         >
                             Experience :
                         </Heading>
-                        <Box>
-                            {works.map((data, i) => (
-                                <List key={i} px={50}>
+                        <Box mb={5}>
+                            {works.slice(0, limit).map((data, i) => (
+                                <List key={i} px={10}>
                                     <Flex
                                         flex={{ base: 1 }}
                                         justify={{ md: 'start' }}
@@ -186,6 +187,13 @@ const About: FC = () => {
                                 </List>
                             ))}
                         </Box>
+                        <Center>
+                            {works.length > 6 ?
+                                <Button variant={'outline'} size={'sm'} onClick={() => setLimit(limit + 2)}>Load More...</Button>
+                                :
+                                null
+                            }
+                        </Center>
                     </div>
                 </Container>
             </Box>
