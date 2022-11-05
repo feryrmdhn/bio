@@ -133,7 +133,7 @@ export const myJob: Array<Jobs> = [
     {
         id: 2,
         name: 'TLaunchpad Admin Panel',
-        href: 'Tlaunchpad'
+        href: 'TLaunchpad'
     },
     {
         id: 3,
@@ -147,11 +147,6 @@ export const myJob: Array<Jobs> = [
     },
     {
         id: 5,
-        name: 'Serpul Admin Panel',
-        href: 'Serpul'
-    },
-    {
-        id: 6,
         name: 'Kickin App',
         href: 'Kickin'
     }

@@ -5,15 +5,21 @@ import { Articles } from "../types";
 const article: Array<Articles> = [
     {
         id: 1,
-        title: 'Zustand React Tutorial — Pengganti Redux (?)',
-        date: 'Feb 20, 2022',
-        href: 'https://medium.com/@feryramadhanc_/zustand-react-tutorial-pengganti-redux-abc0e384bbbe'
+        title: 'Perbedaan Javascript dan Typescript',
+        date: 'Nov 5, 2022',
+        href: 'https://medium.com/@feryramadhanc_/perbedaan-javascript-dan-typescript-9586c9f2773b'
     },
     {
         id: 2,
         title: 'Easy! Cara menghubungkan Metamask wallet dengan React',
         date: 'May 29, 2022',
         href: 'https://medium.com/@feryramadhanc_/easy-cara-menghubungkan-metamask-wallet-dengan-react-6450aa8cd575'
+    },
+    {
+        id: 3,
+        title: 'Zustand React Tutorial — Pengganti Redux (?)',
+        date: 'Feb 20, 2022',
+        href: 'https://medium.com/@feryramadhanc_/zustand-react-tutorial-pengganti-redux-abc0e384bbbe'
     }
 ]
 
@@ -44,7 +50,7 @@ const Blog: FC = () => {
                         >
                             I also wrote some articles that might help some people. Especially in the field of web development.
                         </Text>
-                        <List>
+                        <List mb={10}>
                             {article.slice(0, limit).map((list) => (
                                 <ListItem key={list.id} mb={6} pb={3} borderBottom={`1px solid ${borderColor}`}>
                                     <Link

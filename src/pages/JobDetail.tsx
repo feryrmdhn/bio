@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, Center, Container, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useColorModeValue } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { JobDetails } from "../types";
 import Carousel from "../components/Carousel";
@@ -7,35 +7,61 @@ import Carousel from "../components/Carousel";
 const data: Array<JobDetails> = [
     {
         slug: 'Middleware',
-        desc: 'hahahahahah',
-        frontend: ['react', 'scss'],
-        backend: ['nest', 'mongo'],
+        desc: 'This project is a combined project with several pages in one dashboard, Middleware payment aims to make it easier for customers to make transactions on several integrated company projects, both internal and external transaction facilities.',
+        frontend: ['Typescript', 'React', 'Redux-Saga', 'Scss', 'React-Bootstrap', 'Vercel'],
+        backend: ['Nodejs', 'Typescript', 'Nest', 'Swagger', 'MySQL'],
         image: [
-            <img src="https://kdvr.com/wp-content/uploads/sites/11/2022/02/1040x585-2022-0110-best-size-5-soccer-ball-5a0ad2.jpg?w=1280" alt="" />,
-            <img src="https://kdvr.com/wp-content/uploads/sites/11/2022/02/1040x585-2022-0110-best-size-5-soccer-ball-5a0ad2.jpg?w=1280" alt="" />,
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi3MOrVAJiIgmph8GizT-HuXZ2v6934NcO2w&usqp=CAU" alt="" />
+            <img src={require('../assets/img/project/mid1.png')} alt="midlleware1" />,
+            <img src={require('../assets/img/project/mid2.png')} alt="midlleware2" />,
+            <img src={require('../assets/img/project/mid3.png')} alt="midlleware3" />,
+            <img src={require('../assets/img/project/mid4.png')} alt="midlleware4" />,
         ]
     },
     {
         slug: 'Kioser',
-        desc: 'hihihihi',
-        frontend: ['react', 'scss'],
-        backend: ['nest', 'mongo'],
+        desc: 'Kioser is a distributor for selling online credit for all operators without large national capital, providing a variety of products ranging from All Operator Electric Credit, Internet Packages, SMS Packages, Transfer Credit, PLN Tokens, Game Vouchers, eCommerce Balances and Payment Point Online Banking (PPOB) at a low price!',
+        frontend: ['Javascript', 'React', 'Redux-Thunk', 'Scss', 'Ant Design'],
+        backend: ['PHP', 'Laravel', 'Golang', 'MySQL', 'Nginx'],
         image: [
-            <img src="https://kdvr.com/wp-content/uploads/sites/11/2022/02/1040x585-2022-0110-best-size-5-soccer-ball-5a0ad2.jpg?w=1280" alt="" />,
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi3MOrVAJiIgmph8GizT-HuXZ2v6934NcO2w&usqp=CAU" alt="" />
+            <img src={require('../assets/img/project/ki1.PNG')} alt="kioser1" />,
+            <img src={require('../assets/img/project/ki2.PNG')} alt="kioser2" />,
+            <img src={require('../assets/img/project/ki3.png')} alt="kioser3" />,
+            <img src={require('../assets/img/project/ki4.PNG')} alt="kioser4" />,
+        ]
+    },
+    {
+        slug: 'TLaunchpad',
+        desc: 'TLaunchpad is the leading decentralized fundraising platform and IDO platform in the Asian market. This project invites to be part of a cross-chain token pool and raise capital on Blockchains; Solana, Binance Smart Chain, Polygon, and Ethereum.',
+        frontend: ['Typescript', 'Nextjs', 'Context', 'Scss', 'Material UI', 'Web3', 'Vercel'],
+        backend: ['Nodejs', 'Typescript', 'Nest', 'Express', 'Swagger', 'Web3', 'MongoDB'],
+        image: [
+            <img src={require('../assets/img/project/launch-1.png')} alt="launch1" />,
+            <img src={require('../assets/img/project/launch-2.png')} alt="launch2" />,
+            <img src={require('../assets/img/project/launch-3.png')} alt="launch3" />,
+            <img src={require('../assets/img/project/launch-4.png')} alt="launch4" />,
         ]
     },
     {
         slug: 'Kriptoversity',
         desc: 'Cryptoversity is a platform to educate people about crypto, blockchain, NFT, web3, exchange and so on. This platform is also available in mobile applications with Android and iOS Operating System.',
         frontend: ['Javascript', 'React', 'Redux-Saga', 'Scss', 'React-Bootstrap', 'Vercel'],
-        backend: ['Node', 'Typescript', 'Nest', 'Swagger', 'MySQL', 'AWS'],
+        backend: ['Nodejs', 'Typescript', 'Nest', 'Swagger', 'MySQL', 'AWS'],
         image: [
             <img src={require('../assets/img/project/Krip-1.png')} alt="krip1" />,
             <img src={require('../assets/img/project/Krip-2.png')} alt="krip2" />,
             <img src={require('../assets/img/project/Krip-3.png')} alt="krip3" />,
             <img src={require('../assets/img/project/Krip-4.png')} alt="krip4" />,
+        ]
+    },
+    {
+        slug: 'Kickin',
+        desc: 'Kickin is an application for ordering long distance futsal courts online. It is possible for clients without having to come directly to the field. Please visit kickinapp.herokuapp.com/ to see it.',
+        frontend: ['Javascript', 'React', 'Redux-Thunk', 'Scss', 'Ant Design', 'Heroku'],
+        backend: ['Nodejs', 'Javascript', 'Express', 'Postman Docs', 'PostgreSQL', 'Nginx'],
+        image: [
+            <img src={require('../assets/img/project/Kick1.png')} alt="Kick1" />,
+            <img src={require('../assets/img/project/Kick2.png')} alt="Kick2" />,
+            <img src={require('../assets/img/project/Kick3.png')} alt="Kick3" />,
         ]
     },
 
@@ -102,8 +128,8 @@ const JobDetail: FC = () => {
                                 <Tabs variant='unstyled'>
                                     <Flex>
                                         <TabList flexDirection={'column'}>
-                                            <Tab _selected={{ border: '1px solid' }}>Frontend</Tab>
-                                            <Tab _selected={{ border: '1px solid' }}>Backend</Tab>
+                                            <Tab _selected={{ fontWeight: 'bold', _before: { content: '">"', marginRight: '10px' } }} pl={0}>Frontend</Tab>
+                                            <Tab _selected={{ fontWeight: 'bold', _before: { content: '">"', marginRight: '10px' } }} pl={0}>Backend</Tab>
                                         </TabList>
                                         <TabPanels>
                                             <TabPanel>
@@ -130,8 +156,9 @@ const JobDetail: FC = () => {
                                 color={colorText}
                                 mb={10}
                             >
-                                Note: This project is private and maybe has no url to visit, just showing some screenshot images.
+                                Note: The images used is from the demo version of the project.
                             </Text>
+
                         </Box>
                     ))}
                 </Container>
