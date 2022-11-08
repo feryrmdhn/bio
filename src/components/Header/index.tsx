@@ -268,7 +268,7 @@ const NAV_ITEMS: Array<NavItem> = [
             },
             {
                 label: 'Discord',
-                href: '#',
+                href: 'https://discord.gg/CzC6KuZW',
             },
         ],
     },

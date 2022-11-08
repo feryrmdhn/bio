@@ -172,37 +172,37 @@ export const myJob: Array<Jobs> = [
 export const myCerfitiface: Array<Certificate> = [
     {
         id: 1,
-        title: 'Node (Basic)',
+        title: 'English Level Test',
+        award: 'EF Set',
+        href: 'https://www.efset.org/cert/LVXeAD',
+        date: 'Jul 2020'
+    },
+    {
+        id: 2,
+        title: 'Node (Basic Level)',
         award: 'Hackerrank',
         href: 'https://www.hackerrank.com/certificates/b548bf122937',
         date: 'Nov 2022'
     },
     {
-        id: 2,
-        title: 'Javascript (Basic)',
+        id: 3,
+        title: 'Javascript (Basic Level)',
         award: 'Hackerrank',
         href: 'https://www.hackerrank.com/certificates/649b4a3fba2a',
         date: 'Mar 2022'
     },
     {
-        id: 3,
-        title: 'Problem Solving (Basic)',
+        id: 4,
+        title: 'Problem Solving (Basic Level)',
         award: 'Hackerrank',
         href: 'https://www.hackerrank.com/certificates/5275453ed6e2',
         date: 'Sep 2021'
     },
     {
-        id: 4,
-        title: 'React (Basic)',
+        id: 5,
+        title: 'React (Basic Level)',
         award: 'Hackerrank',
         href: 'https://www.hackerrank.com/certificates/f606a3ed992c',
         date: 'Oct 2021'
-    },
-    {
-        id: 5,
-        title: 'English Level Test',
-        award: 'EF Set',
-        href: 'https://www.efset.org/cert/LVXeAD',
-        date: 'Jul 2020'
     }
 ]
