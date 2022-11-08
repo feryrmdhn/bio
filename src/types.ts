@@ -38,6 +38,7 @@ export interface Jobs {
     id?: number;
     name: string;
     href?: string;
+    category?: string;
 }
 
 export interface JobDetails {
@@ -61,4 +62,13 @@ export interface Certificate {
     award: string;
     href?: string;
     date: string;
+}
+
+export interface ModalProps {
+    titleOpen: ReactElement<any> | string;
+    title?: string;
+    submit?: () => void;
+    element: ReactElement<any>;
+    closeModal: boolean;
+    submitModal: boolean;
 }

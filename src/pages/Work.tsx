@@ -1,13 +1,12 @@
 import { FC, useState } from "react";
-import { Box, Button, Center, Container, Flex, Grid, GridItem, Heading, Link, List, ListItem, Text, Tooltip, useColorModeValue } from "@chakra-ui/react";
-import { myCerfitiface, myJob, skillTools } from "../data/mockData";
-import CardJobs from "../components/Card";
+import { Box, Button, Center, Container, Flex, Grid, Heading, Link, List, ListItem, Text, Tooltip, useColorModeValue } from "@chakra-ui/react";
+import { myCerfitiface, skillTools } from "../data/mockData";
+import { Link as Links } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAward } from "@fortawesome/free-solid-svg-icons";
+import { faAward, faCircleExclamation, faFolderClosed } from "@fortawesome/free-solid-svg-icons";
 
 const Work: FC = () => {
-    const [limitJob, setLimitJob] = useState(6)
-    const [limitCertify, setLimitCertify] = useState(5)
+    const [limitCertify, setLimitCertify] = useState<number>(5)
     const colorText = useColorModeValue('black', 'white')
     const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
     const iconCertifColor = useColorModeValue('gray.600', 'white')
@@ -35,22 +34,54 @@ const Work: FC = () => {
                         </Text>
                         <Grid
                             mb={10}
-                            templateColumns={[null, null, 'repeat(3, 1fr)']}
+                            templateColumns={[null, null, 'repeat(2, 1fr)']}
                             gap={6}
                         >
-                            {myJob.slice(0, limitJob).map(item => (
-                                <GridItem key={item.id}>
-                                    <CardJobs name={item.name} href={item.href} />
-                                </GridItem>
-                            ))}
+                            <Box py={5} px={7} border={`1px solid ${borderColor}`}>
+                                <Flex>
+                                    <Box my={'auto'} pr={7}>
+                                        <FontAwesomeIcon icon={faCircleExclamation} size={'xl'} />
+                                    </Box>
+                                    <div>
+                                        <Links to='/work/category/company'>
+                                            <Heading
+                                                as='h3'
+                                                mb={3}
+                                                fontFamily={'sans-serif'}
+                                                fontSize={'lg'}
+                                            >
+                                                Company Project
+                                            </Heading>
+                                            <Text fontSize={15} color={colorText} mb={5}>
+                                                There is only a brief attachment regarding the project description and does not have a link to visit.
+                                            </Text>
+                                        </Links>
+                                    </div>
+                                </Flex>
+                            </Box>
+                            <Box py={5} px={7} border={`1px solid ${borderColor}`}>
+                                <Flex>
+                                    <Box my={'auto'} pr={7}>
+                                        <FontAwesomeIcon icon={faFolderClosed} size={'xl'} />
+                                    </Box>
+                                    <div>
+                                        <Links to='/work/category/personal'>
+                                            <Heading
+                                                as='h3'
+                                                mb={3}
+                                                fontFamily={'sans-serif'}
+                                                fontSize={'lg'}
+                                            >
+                                                Personal Project
+                                            </Heading>
+                                            <Text fontSize={15} color={colorText} mb={5}>
+                                                The projects created for learning purposes or sharing knowledge that can be used for beginners.
+                                            </Text>
+                                        </Links>
+                                    </div>
+                                </Flex>
+                            </Box>
                         </Grid>
-                        <Center>
-                            {myJob.length > 6 ?
-                                <Button variant={'outline'} size={'sm'} mb={10} onClick={() => setLimitJob(limitJob + 2)}>Load More...</Button>
-                                :
-                                null
-                            }
-                        </Center>
                         <Heading
                             as='h4'
                             textAlign={'center'}

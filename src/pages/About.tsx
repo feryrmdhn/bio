@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Box, Container, Flex, Heading, List, Link, ListItem, Text, useColorModeValue, Button, Center } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, List, Link, ListItem, Text, useColorModeValue, Button, Center, Highlight } from "@chakra-ui/react";
 import { Experience } from "../types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceGrinWide, faLocationDot, faMedal, faPersonRunning, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -63,8 +63,8 @@ let works: Array<Experience> = [
 ]
 
 const About: FC = () => {
+    const [limit, setLimit] = useState<number>(6)
     const colorText = useColorModeValue('black', 'white')
-    const [limit, setLimit] = useState(6)
 
     const Titlejob = ({ children }: any) => {
         return <Heading
@@ -97,14 +97,11 @@ const About: FC = () => {
                             color={colorText}
                             mb={5}
                         >
-                            Hello guys, here is <i>Fery Ramadhan Cahyono</i> who works in the field of web interface or front-end development.
+                            <Highlight query='Fery Ramadhan Cahyono' styles={{ fontWeight: 'bold', color: useColorModeValue('gray.600', '#d1d100') }}>
+                                Hello guys, here is Fery Ramadhan Cahyono who works in the field of web interface or front-end development.
+                            </Highlight>
                         </Text>
-                        <Text
-                            fontSize={14}
-                            fontFamily={'monospace'}
-                            color={colorText}
-                            mb={5}
-                        >
+                        <Text fontSize={14} color={colorText} mb={5}>
                             A career as a web developer is very enjoyable, apart from being able to interact with the programming code, we also understand the description of applications requested by clients such as User Interface and User Experience.
                             It really helps ourselves and others, professionalism is really needed but satisfying clients is more important than that and I can give it to my clients.
                         </Text>

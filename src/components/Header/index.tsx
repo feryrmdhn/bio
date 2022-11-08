@@ -104,7 +104,6 @@ const DesktopNav = () => {
                                 fontSize={'md'}
                                 letterSpacing={1.5}
                                 color={linkColor}
-                                _activeLink={{ fontWeight: 'bold' }}
                                 _focus={{
                                     background: 'none'
                                 }}
@@ -118,7 +117,7 @@ const DesktopNav = () => {
 
                         {navItem.children && (
                             <PopoverContent
-                                border={0}
+                                border={'0.5px solid'}
                                 boxShadow={'xl'}
                                 bg={popoverContentBgColor}
                                 p={4}
@@ -264,11 +263,11 @@ const NAV_ITEMS: Array<NavItem> = [
         label: 'Contact',
         children: [
             {
-                label: 'Whatsapp',
+                label: 'Telegram',
                 href: '#',
             },
             {
-                label: 'Telegram',
+                label: 'Discord',
                 href: '#',
             },
         ],

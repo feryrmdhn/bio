@@ -24,10 +24,9 @@ const article: Array<Articles> = [
 ]
 
 const Blog: FC = () => {
-    const [limit, setLimit] = useState(5)
+    const [limit, setLimit] = useState<number>(5)
     const colorText = useColorModeValue('black', 'white')
     const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
-
 
     return (
         <>

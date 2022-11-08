@@ -64,11 +64,10 @@ const data: Array<JobDetails> = [
             <img src={require('../assets/img/project/Kick3.png')} alt="Kick3" />,
         ]
     },
-
 ]
 
 const JobDetail: FC = () => {
-    const { slug }: any = useParams()
+    const { slug } = useParams<string>()
     const colorText = useColorModeValue('black', 'white')
     const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
     const colorTitle = useColorModeValue('gray.600', '#d1d100')

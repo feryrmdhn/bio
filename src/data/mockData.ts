@@ -128,27 +128,44 @@ export const myJob: Array<Jobs> = [
     {
         id: 1,
         name: 'Middleware Admin Panel',
-        href: 'Middleware'
+        href: 'Middleware',
+        category: 'company'
     },
     {
         id: 2,
         name: 'TLaunchpad Admin Panel',
-        href: 'TLaunchpad'
+        href: 'TLaunchpad',
+        category: 'company'
     },
     {
         id: 3,
         name: 'Kriptoversity Admin Panel',
-        href: 'Kriptoversity'
+        href: 'Kriptoversity',
+        category: 'company'
     },
     {
         id: 4,
         name: 'Kioser Admin Panel',
-        href: 'Kioser'
+        href: 'Kioser',
+        category: 'company'
     },
     {
         id: 5,
         name: 'Kickin App',
-        href: 'Kickin'
+        href: 'Kickin',
+        category: 'company'
+    },
+    {
+        id: 6,
+        name: 'React Redux',
+        href: 'https://github.com/feryrmdhn/react-redux',
+        category: 'personal'
+    },
+    {
+        id: 7,
+        name: 'Metamask',
+        href: 'https://github.com/feryrmdhn/connect-metamask',
+        category: 'personal'
     }
 ]
 
