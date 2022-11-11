@@ -30,12 +30,12 @@ const Blog: FC = () => {
 
     return (
         <>
-            <Box h={'full'} pt={5}>
+            <Box h='full' pt={5}>
                 <Container maxW='container.lg' px={6} color={useColorModeValue('gray.600', '#d1d100')}>
                     <Heading
                         as='h2'
                         mb={4}
-                        fontFamily={'sans-serif'}
+                        fontFamily='sans-serif'
                         color={useColorModeValue('gray.600', '#d1d100')}
                     >
                         Blogs
@@ -43,11 +43,11 @@ const Blog: FC = () => {
                     <div className="fadeInUp">
                         <Text
                             fontSize={18}
-                            fontFamily={'monospace'}
+                            fontFamily='monospace'
                             color={colorText}
                             mb={7}
                         >
-                            I also wrote some articles that might help some people. Especially in the field of web development.
+                            I also wrote some articles that might help some people, especially in the field of web development.
                         </Text>
                         <List mb={10}>
                             {article.slice(0, limit).map((list) => (
@@ -62,7 +62,7 @@ const Blog: FC = () => {
                                         color={colorText}
                                         fontSize={14}
                                         pt={3}
-                                        fontStyle={'italic'}
+                                        fontStyle='italic'
                                     >
                                         {list.date}
                                     </Text>
@@ -71,7 +71,7 @@ const Blog: FC = () => {
                         </List>
                         <Center>
                             {article.length > 5 ?
-                                <Button variant={'outline'} size={'sm'} onClick={() => setLimit(limit + 2)}>Load More...</Button>
+                                <Button variant='outline' size='sm' onClick={() => setLimit(limit + 2)}>Load More...</Button>
                                 :
                                 null
                             }

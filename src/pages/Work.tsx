@@ -13,12 +13,12 @@ const Work: FC = () => {
 
     return (
         <>
-            <Box h={'full'} pt={5}>
+            <Box h='full' pt={5}>
                 <Container maxW='container.lg' px={6} color={useColorModeValue('gray.600', '#d1d100')}>
                     <Heading
                         as='h2'
                         mb={4}
-                        fontFamily={'sans-serif'}
+                        fontFamily='sans-serif'
                         color={useColorModeValue('gray.600', '#d1d100')}
                     >
                         Works
@@ -26,7 +26,7 @@ const Work: FC = () => {
                     <div className="fadeInUp">
                         <Text
                             fontSize={18}
-                            fontFamily={'monospace'}
+                            fontFamily='monospace'
                             color={colorText}
                             mb={5}
                         >
@@ -39,7 +39,7 @@ const Work: FC = () => {
                         >
                             <Box py={5} px={7} border={`1px solid ${borderColor}`}>
                                 <Flex>
-                                    <Box my={'auto'} pr={7}>
+                                    <Box my='auto' pr={7}>
                                         <FontAwesomeIcon icon={faCircleExclamation} size={'xl'} />
                                     </Box>
                                     <div>
@@ -47,8 +47,8 @@ const Work: FC = () => {
                                             <Heading
                                                 as='h3'
                                                 mb={3}
-                                                fontFamily={'sans-serif'}
-                                                fontSize={'lg'}
+                                                fontFamily='sans-serif'
+                                                fontSize='lg'
                                             >
                                                 Company Project
                                             </Heading>
@@ -61,7 +61,7 @@ const Work: FC = () => {
                             </Box>
                             <Box py={5} px={7} border={`1px solid ${borderColor}`}>
                                 <Flex>
-                                    <Box my={'auto'} pr={7}>
+                                    <Box my='auto' pr={7}>
                                         <FontAwesomeIcon icon={faFolderClosed} size={'xl'} />
                                     </Box>
                                     <div>
@@ -69,8 +69,8 @@ const Work: FC = () => {
                                             <Heading
                                                 as='h3'
                                                 mb={3}
-                                                fontFamily={'sans-serif'}
-                                                fontSize={'lg'}
+                                                fontFamily='sans-serif'
+                                                fontSize='lg'
                                             >
                                                 Personal Project
                                             </Heading>
@@ -84,9 +84,9 @@ const Work: FC = () => {
                         </Grid>
                         <Heading
                             as='h4'
-                            textAlign={'center'}
+                            textAlign='center'
                             mb={4}
-                            fontFamily={'sans-serif'}
+                            fontFamily='sans-serif'
                             fontSize='2xl'
                             color={useColorModeValue('gray.600', '#d1d100')}
                         >
@@ -94,9 +94,9 @@ const Work: FC = () => {
                         </Heading>
                         <Text
                             fontSize={14}
-                            fontFamily={'monospace'}
+                            fontFamily='monospace'
                             color={colorText}
-                            textAlign={'center'}
+                            textAlign='center'
                             mb={10}
                         >
                             I have received several awards in the form of certificates.
@@ -104,8 +104,8 @@ const Work: FC = () => {
                         <List mb={5}>
                             {myCerfitiface.slice(0, limitCertify).map((list) => (
                                 <Flex key={list.id}>
-                                    <FontAwesomeIcon icon={faAward} size={'2x'} color={iconCertifColor} />
-                                    <ListItem mb={6} ml={6} pb={3} w={'100%'} borderBottom={`1px solid ${borderColor}`}>
+                                    <FontAwesomeIcon icon={faAward} size='2x' color={iconCertifColor} />
+                                    <ListItem mb={6} ml={6} pb={3} w='100%' borderBottom={`1px solid ${borderColor}`}>
                                         <Link href={list.href} fontSize={20}>
                                             {list.title}
                                         </Link>
@@ -113,7 +113,7 @@ const Work: FC = () => {
                                             <Text
                                                 color={colorText}
                                                 fontSize={14}
-                                                fontWeight={'bold'}
+                                                fontWeight='bold'
                                             >
                                                 {list.award}
                                             </Text>
@@ -131,16 +131,16 @@ const Work: FC = () => {
                         </List>
                         <Center>
                             {myCerfitiface.length > 5 ?
-                                <Button variant={'outline'} size={'sm'} mb={10} onClick={() => setLimitCertify(limitCertify + 2)}>Load More...</Button>
+                                <Button variant='outline' size='sm' mb={10} onClick={() => setLimitCertify(limitCertify + 2)}>Load More...</Button>
                                 :
                                 null
                             }
                         </Center>
                         <Heading
                             as='h4'
-                            textAlign={'center'}
+                            textAlign='center'
                             mb={4}
-                            fontFamily={'sans-serif'}
+                            fontFamily='sans-serif'
                             fontSize='2xl'
                             color={useColorModeValue('gray.600', '#d1d100')}
                         >
@@ -149,17 +149,17 @@ const Work: FC = () => {
                         <Box mb={5}>
                             <Text
                                 fontSize={14}
-                                fontFamily={'monospace'}
+                                fontFamily='monospace'
                                 color={colorText}
-                                textAlign={'center'}
+                                textAlign='center'
                                 mb={10}
                             >
                                 This is the stack I usually use to develop.
                             </Text>
-                            <Flex justifyContent={'center'} wrap={'wrap'} px={10}>
+                            <Flex justifyContent='center' wrap='wrap' px={10}>
                                 {skillTools.map(data => (
                                     <Tooltip key={data.id} label={data.text} placement='top'>
-                                        <Box textAlign={'center'} w='40px' mx={3} mb={8}>
+                                        <Box textAlign='center' w='40px' mx={3} mb={8}>
                                             <img src={data.icon} alt={`icon-${data.text}`} />
                                         </Box>
                                     </Tooltip>

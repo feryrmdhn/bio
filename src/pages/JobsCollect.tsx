@@ -15,12 +15,12 @@ const JobsCollect: FC = () => {
 
     return (
         <>
-            <Box h={'full'} pt={5}>
+            <Box h='full' pt={5}>
                 <Container maxW='container.lg' px={6} color={useColorModeValue('gray.600', '#d1d100')}>
                     <Heading
                         as='h2'
                         mb={4}
-                        fontFamily={'sans-serif'}
+                        fontFamily='sans-serif'
                         color={useColorModeValue('gray.600', '#d1d100')}
                     >
                         Project Collection
@@ -28,7 +28,7 @@ const JobsCollect: FC = () => {
                     <div className="fadeInUp">
                         <Text
                             fontSize={18}
-                            fontFamily={'monospace'}
+                            fontFamily='monospace'
                             color={colorText}
                             mb={5}
                         >
@@ -49,7 +49,7 @@ const JobsCollect: FC = () => {
                             {arrJob.slice(0, limit).length === limitData ?
                                 null
                                 :
-                                <Button variant={'outline'} size={'sm'} mb={10} onClick={() => setLimit(limit + 3)}>Load More...</Button>
+                                <Button variant='outline' size='sm' mb={10} onClick={() => setLimit(limit + 3)}>Load More...</Button>
                             }
                         </Center>
                     </div>

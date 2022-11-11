@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Box, Button, Container, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import Typewriter from 'typewriter-effect';
-import '../assets/style/index.css'
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Link as Links } from 'react-router-dom';
 
@@ -10,7 +9,7 @@ const Home: FC = () => {
 
     return (
         <>
-            <Container maxW='container.sm' minH='100%' display={'flex'} justifyContent={'center'} alignItems={'center'} color={useColorModeValue('gray.600', '#d1d100')}>
+            <Container maxW='container.sm' minH='100%' display='flex' justifyContent='center' alignItems='center' color={useColorModeValue('gray.600', '#d1d100')}>
                 <Box mt={170}>
                     <Typewriter
                         options={{
@@ -24,20 +23,20 @@ const Home: FC = () => {
                     <div className="fadeInUp">
                         <Text
                             fontSize={18}
-                            fontFamily={'monospace'}
+                            fontFamily='monospace'
                             color={colorText}
                         >
                             Hello I'm <b>Fery</b> a programmer
                             from Indonesia who focuses on developing web interface it called Front-end.
                         </Text>
-                        <Flex justifyContent={'right'}>
+                        <Flex justifyContent='right'>
                             <Links to='/about'>
                                 <Button
                                     w={100}
                                     mt={4}
-                                    background={'none'}
-                                    border={'2px'}
-                                    borderStyle={'solid'}
+                                    background='none'
+                                    border='2px'
+                                    borderStyle='solid'
                                     borderRadius={0}
                                     rightIcon={<ArrowForwardIcon />}
                                     className="btn-go"

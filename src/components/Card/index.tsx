@@ -13,7 +13,7 @@ const CardJobs: FC<Jobs> = ({ name, href, category }) => {
             h='120px'
             color={textColor}
             fontSize={14}
-            fontStyle={'italic'} p={3}
+            fontStyle='italic' p={3}
             _hover={{
                 color: textHover,
                 transition: '0.3s',

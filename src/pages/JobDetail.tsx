@@ -74,92 +74,94 @@ const JobDetail: FC = () => {
 
     return (
         <>
-            <Box h={'full'} pt={5}>
+            <Box h='full' pt={5}>
                 <Container maxW='container.lg' px={6} color={useColorModeValue('gray.600', '#d1d100')}>
                     <Heading
                         as='h2'
                         mb={4}
-                        fontFamily={'sans-serif'}
+                        fontFamily='sans-serif'
                         color={useColorModeValue('gray.600', '#d1d100')}
                     >
                         {slug}
                     </Heading>
-                    <Box border={`0.5px solid ${borderColor}`} borderRadius={'6px'}>
-                        <Carousel data={data.filter(list => list.slug === slug)} />
-                    </Box>
-                    {data.filter(list => list.slug === slug).map((item, i) => (
-                        <Box key={i} mt={8}>
-                            <Heading
-                                as='h4'
-                                mb={4}
-                                fontFamily={'sans-serif'}
-                                fontSize='2xl'
-                                color={colorTitle}
-                            >
-                                Description
-                            </Heading>
-                            <Text
-                                fontSize={17}
-                                fontFamily={'sans-serif'}
-                                color={colorText}
-                                mb={10}
-                            >
-                                {item.desc}
-                            </Text>
-                            <Heading
-                                as='h4'
-                                mb={4}
-                                fontFamily={'sans-serif'}
-                                fontSize='2xl'
-                                color={colorTitle}
-                            >
-                                Tech Stack
-                            </Heading>
-                            <Text
-                                fontSize={14}
-                                fontFamily={'monospace'}
-                                color={colorText}
-                                mb={6}
-                            >
-                                The following is the technology stack used to build this project.
-                            </Text>
-                            <Box mb={'5'}>
-                                <Tabs variant='unstyled'>
-                                    <Flex>
-                                        <TabList flexDirection={'column'}>
-                                            <Tab _selected={{ fontWeight: 'bold', _before: { content: '">"', marginRight: '10px' } }} pl={0}>Frontend</Tab>
-                                            <Tab _selected={{ fontWeight: 'bold', _before: { content: '">"', marginRight: '10px' } }} pl={0}>Backend</Tab>
-                                        </TabList>
-                                        <TabPanels>
-                                            <TabPanel>
-                                                {item.frontend?.map((fe, idx) => (
-                                                    <Box key={idx} ml={'6'} fontSize={'lg'} color={colorText}>
-                                                        &bull; {fe}
-                                                    </Box>
-                                                ))}
-                                            </TabPanel>
-                                            <TabPanel>
-                                                {item.backend?.map((be, idx) => (
-                                                    <Box key={idx} ml={'6'} fontSize={'lg'} color={colorText}>
-                                                        &bull; {be}
-                                                    </Box>
-                                                ))}
-                                            </TabPanel>
-                                        </TabPanels>
-                                    </Flex>
-                                </Tabs>
-                            </Box>
-                            <Text
-                                fontSize={11}
-                                fontFamily={'sans-serif'}
-                                color={colorText}
-                                mb={10}
-                            >
-                                Note: The images used is from the demo version of the project.
-                            </Text>
-
+                    <div className="fadeInUp">
+                        <Box border={`0.5px solid ${borderColor}`} borderRadius={'6px'}>
+                            <Carousel data={data.filter(list => list.slug === slug)} />
                         </Box>
-                    ))}
+                        {data.filter(list => list.slug === slug).map((item, i) => (
+                            <Box key={i} mt={8}>
+                                <Heading
+                                    as='h4'
+                                    mb={4}
+                                    fontFamily='sans-serif'
+                                    fontSize='2xl'
+                                    color={colorTitle}
+                                >
+                                    Description
+                                </Heading>
+                                <Text
+                                    fontSize={17}
+                                    fontFamily='sans-serif'
+                                    color={colorText}
+                                    mb={10}
+                                >
+                                    {item.desc}
+                                </Text>
+                                <Heading
+                                    as='h4'
+                                    mb={4}
+                                    fontFamily='sans-serif'
+                                    fontSize='2xl'
+                                    color={colorTitle}
+                                >
+                                    Tech Stack
+                                </Heading>
+                                <Text
+                                    fontSize={14}
+                                    fontFamily='monospace'
+                                    color={colorText}
+                                    mb={6}
+                                >
+                                    The following is the technology stack used to build this project.
+                                </Text>
+                                <Box mb={'5'}>
+                                    <Tabs variant='unstyled'>
+                                        <Flex>
+                                            <TabList flexDirection='column'>
+                                                <Tab _selected={{ fontWeight: 'bold', _before: { content: '">"', marginRight: '10px' } }} pl={0}>Frontend</Tab>
+                                                <Tab _selected={{ fontWeight: 'bold', _before: { content: '">"', marginRight: '10px' } }} pl={0}>Backend</Tab>
+                                            </TabList>
+                                            <TabPanels>
+                                                <TabPanel>
+                                                    {item.frontend?.map((fe, idx) => (
+                                                        <Box key={idx} ml='6' fontSize={'lg'} color={colorText}>
+                                                            &bull; {fe}
+                                                        </Box>
+                                                    ))}
+                                                </TabPanel>
+                                                <TabPanel>
+                                                    {item.backend?.map((be, idx) => (
+                                                        <Box key={idx} ml='6' fontSize={'lg'} color={colorText}>
+                                                            &bull; {be}
+                                                        </Box>
+                                                    ))}
+                                                </TabPanel>
+                                            </TabPanels>
+                                        </Flex>
+                                    </Tabs>
+                                </Box>
+                                <Text
+                                    fontSize={11}
+                                    fontFamily='sans-serif'
+                                    color={colorText}
+                                    mb={10}
+                                >
+                                    Note: The images used is from the demo version of the project.
+                                </Text>
+
+                            </Box>
+                        ))}
+                    </div>
                 </Container>
             </Box>
         </>

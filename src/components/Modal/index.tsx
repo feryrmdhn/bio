@@ -12,23 +12,21 @@ const ReusableModal: FC<ModalProps> = ({ titleOpen, title, closeModal, submit, e
 
             <Modal size={'xs'} isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay />
-                <ModalContent className="modal-glass-effect" {...props}>
+                <ModalContent className="modal-glass-effect">
                     <ModalHeader>{title}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         {element}
                     </ModalBody>
                     <ModalFooter>
-                        {closeModal ?
-                            <Button colorScheme='blue' mr={3} onClick={onClose}>Close</Button>
-                            :
-                            null
-                        }
-                        {submit ?
-                            <Button variant='ghost' onClick={submit} >Submit</Button>
-                            :
-                            null
-                        }
+                        <>
+                            {closeModal ?
+                                <Button colorScheme='blue' mr={3} onClick={onClose}>Close</Button>
+                                :
+                                null
+                            }
+                            {props.submitModal ?? <Button variant='ghost' onClick={submit} >Submit</Button>}
+                        </>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

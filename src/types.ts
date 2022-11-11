@@ -70,5 +70,5 @@ export interface ModalProps {
     submit?: () => void;
     element: ReactElement<any>;
     closeModal: boolean;
-    submitModal: boolean;
+    submitModal: boolean | undefined;
 }

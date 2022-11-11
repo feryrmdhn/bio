@@ -6,7 +6,7 @@ import { faBan } from "@fortawesome/free-solid-svg-icons";
 const NotFound: FC = () => {
     return (
         <>
-            <Box h={'full'} pt={5}>
+            <Box h='full' pt={5}>
                 <Container maxW='container.lg' px={6} color={useColorModeValue('gray.600', '#d1d100')}>
                     <Center my={5}>
                         <FontAwesomeIcon icon={faBan} size={'5x'} />
@@ -14,8 +14,8 @@ const NotFound: FC = () => {
                     <Heading
                         as='h2'
                         mt={6}
-                        textAlign={'center'}
-                        fontFamily={'sans-serif'}
+                        textAlign='center'
+                        fontFamily='sans-serif'
                         color={useColorModeValue('gray.600', '#d1d100')}
                     >
                         Not Found

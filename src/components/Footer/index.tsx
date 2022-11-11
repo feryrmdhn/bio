@@ -31,9 +31,9 @@ const Footer: FC = () => {
         <Box as="footer" bottom={0} px={10} py={4}>
             <Flex justify={{ base: 'space-between' }} wrap={'wrap'}>
                 {isMobile ?
-                    <Box my={'auto'}>
+                    <Box my='auto'>
                         <ReusableModal
-                            titleOpen={<FontAwesomeIcon icon={faEllipsis} size={'lg'} />}
+                            titleOpen={<FontAwesomeIcon icon={faEllipsis} size='lg' />}
                             closeModal={false}
                             element={
                                 <>
@@ -41,13 +41,13 @@ const Footer: FC = () => {
                                         {footerSocmed.map((data, i) => (
                                             <div key={i}>
                                                 <Button
-                                                    as={'a'}
+                                                    as='a'
                                                     py={3}
                                                     w='150px'
-                                                    variant={'link'}
-                                                    background={'none'}
+                                                    variant='link'
+                                                    background='none'
                                                     href={data.href}
-                                                    color={'white'}
+                                                    color='white'
                                                     border={'1px solid'}
                                                     borderRadius={0}
                                                     leftIcon={data.icon}
@@ -71,9 +71,9 @@ const Footer: FC = () => {
                         {footerSocmed.map((data, i) => (
                             <div key={i}>
                                 <Button
-                                    as={'a'}
-                                    variant={'link'}
-                                    background={'none'}
+                                    as='a'
+                                    variant='link'
+                                    background='none'
                                     href={data.href}
                                     leftIcon={data.icon}
                                     _groupHover={{
@@ -88,12 +88,12 @@ const Footer: FC = () => {
                     </HStack>
                 }
                 <Text
-                    fontFamily={'monospace'}
+                    fontFamily='monospace'
                     lineHeight='80px'
                     fontSize={14}
                     color={useColorModeValue('black', '#d1d100')}
                 >
-                    &copy;Fery_Ramadhan
+                    &copy; feryramadhanc
                 </Text>
             </Flex>
         </Box>

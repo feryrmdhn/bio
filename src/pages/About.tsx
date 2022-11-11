@@ -3,12 +3,11 @@ import { Box, Container, Flex, Heading, List, Link, ListItem, Text, useColorMode
 import { Experience } from "../types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFaceGrinWide, faLocationDot, faMedal, faPersonRunning, faUser } from "@fortawesome/free-solid-svg-icons";
-import '../assets/style/index.css'
 
 let works: Array<Experience> = [
     {
         icon: <img src={require('../assets/img/TC.png')} className='company-icon' alt='Tokocrytpo' />,
-        title: 'Frontend Developer',
+        title: 'Software Engineer (Frontend)',
         company: 'Tokocrypto',
         status: 'Remote Fulltime',
         time: 'Jan 2022 - Present',
@@ -80,12 +79,12 @@ const About: FC = () => {
 
     return (
         <>
-            <Box h={'full'} pt={5}>
+            <Box h='full' pt={5}>
                 <Container maxW='container.lg'>
                     <Heading
                         as='h2'
                         mb={4}
-                        fontFamily={'sans-serif'}
+                        fontFamily='sans-serif'
                         color={useColorModeValue('gray.600', '#d1d100')}
                     >
                         About me
@@ -93,7 +92,7 @@ const About: FC = () => {
                     <div className="fadeInUp">
                         <Text
                             fontSize={18}
-                            fontFamily={'monospace'}
+                            fontFamily='monospace'
                             color={colorText}
                             mb={5}
                         >
@@ -102,15 +101,15 @@ const About: FC = () => {
                             </Highlight>
                         </Text>
                         <Text fontSize={14} color={colorText} mb={5}>
-                            A career as a web developer is very enjoyable, apart from being able to interact with the programming code, we also understand the description of applications requested by clients such as User Interface and User Experience.
-                            It really helps ourselves and others, professionalism is really needed but satisfying clients is more important than that and I can give it to my clients.
+                            A career as a front-end software engineer is very enjoyable, apart from being able to interact with programming code, we also understand the description of applications requested by clients such as User Interface and User Experience (UI/UX).
+                            Very helpful for ourselves, others, and the corporate.
                         </Text>
                         <Heading
                             as='h3'
                             mb={5}
                             fontSize={20}
-                            fontFamily={'sans-serif'}
-                            fontWeight={'normal'}
+                            fontFamily='sans-serif'
+                            fontWeight='normal'
                             color={useColorModeValue('gray.600', '#d1d100')}
                         >
                             Summary :
@@ -153,8 +152,8 @@ const About: FC = () => {
                             as='h3'
                             mb={5}
                             fontSize={20}
-                            fontFamily={'sans-serif'}
-                            fontWeight={'normal'}
+                            fontFamily='sans-serif'
+                            fontWeight='normal'
                             color={useColorModeValue('gray.600', '#d1d100')}
                         >
                             Experience :
@@ -186,7 +185,7 @@ const About: FC = () => {
                         </Box>
                         <Center>
                             {works.length > 6 ?
-                                <Button variant={'outline'} size={'sm'} onClick={() => setLimit(limit + 2)}>Load More...</Button>
+                                <Button variant='outline' size='sm' onClick={() => setLimit(limit + 2)}>Load More...</Button>
                                 :
                                 null
                             }

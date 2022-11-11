@@ -33,7 +33,7 @@ const Header: FC = () => {
     const bgColor = useColorModeValue("white", "#1a202c")
 
     return (
-        <Box as="header" position={'fixed'} top={0} m={0} w={'100%'} zIndex={1}>
+        <Box as="header" position='fixed' top={0} m={0} w='100%' zIndex={1}>
             <Flex
                 bg={bgColor}
                 color={useColorModeValue('gray.600', 'white')}
