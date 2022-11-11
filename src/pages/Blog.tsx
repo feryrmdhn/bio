@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Box, Button, Center, Container, Heading, Link, List, ListItem, Text, useColorModeValue } from "@chakra-ui/react";
 import { Articles } from "../types";
 
@@ -27,6 +27,10 @@ const Blog: FC = () => {
     const [limit, setLimit] = useState<number>(5)
     const colorText = useColorModeValue('black', 'white')
     const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
+
+    useEffect(() => {
+        document.title = 'Fery Ramadhan | Blog';
+    }, [])
 
     return (
         <>

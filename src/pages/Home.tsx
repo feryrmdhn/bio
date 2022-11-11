@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Box, Button, Container, Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import Typewriter from 'typewriter-effect';
 import { ArrowForwardIcon } from "@chakra-ui/icons";
@@ -6,6 +6,10 @@ import { Link as Links } from 'react-router-dom';
 
 const Home: FC = () => {
     const colorText = useColorModeValue('black', 'white')
+
+    useEffect(() => {
+        document.title = 'Fery Ramadhan';
+    }, [])
 
     return (
         <>

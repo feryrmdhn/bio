@@ -1,9 +1,14 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Box, Center, Container, Heading, useColorModeValue } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBan } from "@fortawesome/free-solid-svg-icons";
 
 const NotFound: FC = () => {
+
+    useEffect(() => {
+        document.title = 'Fery Ramadhan | Not Found';
+    }, [])
+
     return (
         <>
             <Box h='full' pt={5}>

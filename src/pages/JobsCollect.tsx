@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Box, Button, Center, Container, Grid, GridItem, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 import CardJobs from "../components/Card";
 import { myJob } from "../data/mockData";
@@ -9,6 +9,10 @@ const JobsCollect: FC = () => {
     const { slug } = useParams<string>()
     const [limit, setLimit] = useState<number>(3)
     const colorText = useColorModeValue('black', 'white')
+
+    useEffect(() => {
+        document.title = 'Fery Ramadhan | Project Collect';
+    }, [])
 
     let arrJob: Array<Jobs> = myJob.filter(job => job.category === slug)
     let limitData: number = arrJob.length

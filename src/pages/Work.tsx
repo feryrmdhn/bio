@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Box, Button, Center, Container, Flex, Grid, Heading, Link, List, ListItem, Text, Tooltip, useColorModeValue } from "@chakra-ui/react";
 import { myCerfitiface, skillTools } from "../data/mockData";
 import { Link as Links } from 'react-router-dom';
@@ -10,6 +10,10 @@ const Work: FC = () => {
     const colorText = useColorModeValue('black', 'white')
     const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
     const iconCertifColor = useColorModeValue('gray.600', 'white')
+
+    useEffect(() => {
+        document.title = 'Fery Ramadhan | Works';
+    }, [])
 
     return (
         <>

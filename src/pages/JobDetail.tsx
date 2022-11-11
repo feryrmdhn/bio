@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Box, Container, Flex, Heading, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useColorModeValue } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { JobDetails } from "../types";
@@ -71,6 +71,10 @@ const JobDetail: FC = () => {
     const colorText = useColorModeValue('black', 'white')
     const borderColor = useColorModeValue('#0a0a0a2b', '#ffffff29')
     const colorTitle = useColorModeValue('gray.600', '#d1d100')
+
+    useEffect(() => {
+        document.title = 'Fery Ramadhan | Project Detail';
+    }, [])
 
     return (
         <>

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Box, Container, Flex, Heading, List, Link, ListItem, Text, useColorModeValue, Button, Center, Highlight } from "@chakra-ui/react";
 import { Experience } from "../types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -64,6 +64,10 @@ let works: Array<Experience> = [
 const About: FC = () => {
     const [limit, setLimit] = useState<number>(6)
     const colorText = useColorModeValue('black', 'white')
+
+    useEffect(() => {
+        document.title = 'Fery Ramadhan | About';
+    }, [])
 
     const Titlejob = ({ children }: any) => {
         return <Heading
