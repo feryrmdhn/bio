@@ -166,6 +166,12 @@ export const myJob: Array<Jobs> = [
         name: 'Metamask',
         href: 'https://github.com/feryrmdhn/connect-metamask',
         category: 'personal'
+    },
+    {
+        id: 8,
+        name: 'Next Context',
+        href: 'https://github.com/feryrmdhn/nextjs-context',
+        category: 'personal'
     }
 ]
 
