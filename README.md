@@ -17,4 +17,4 @@ This project is only about me, apart from documenting the projects I have made, 
 
 ### `Link`
 
-To see it, please visit this site : [fery.tech](www.fery.tech)
+To see it, please visit this site : [fery.tech](https://www.fery.tech/)
