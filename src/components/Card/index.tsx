@@ -1,5 +1,5 @@
-import { Box, Center, Link, useColorModeValue } from "@chakra-ui/react";
 import { FC } from "react";
+import { Box, Center, Link, useColorModeValue } from "@chakra-ui/react";
 import { Link as Links } from "react-router-dom";
 import { Jobs } from "../../types";
 
@@ -30,7 +30,7 @@ const CardJobs: FC<Jobs> = ({ name, href, category }) => {
                     <ChildrenCard />
                 </Links>
                 :
-                <Link href={href}>
+                <Link href={href} _hover={{ textDecor: 'none' }}>
                     <ChildrenCard />
                 </Link>
             }

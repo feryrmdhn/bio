@@ -1,71 +1,74 @@
+import { FC, lazy, Suspense } from "react";
 import { Box, Button, Flex, HStack, Text, useBreakpointValue, useColorModeValue, VStack } from "@chakra-ui/react";
-import { FC } from "react";
 import { Socmed } from "../../types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMedium, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import ReusableModal from "../Modal";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+
+const ReusableModal = lazy(() => import("../Modal"))
+
+const footerSocmed: Array<Socmed> = [
+    {
+        label: "LinkedIn",
+        icon: <FontAwesomeIcon icon={faLinkedin} />,
+        href: 'https://www.linkedin.com/in/fery-ramadhan-c-323167150/'
+    },
+    {
+        label: "Github",
+        icon: <FontAwesomeIcon icon={faGithub} />,
+        href: 'https://github.com/feryrmdhn'
+    },
+    {
+        label: "Medium",
+        icon: <FontAwesomeIcon icon={faMedium} />,
+        href: 'https://medium.com/@feryramadhanc_   '
+    }
+]
 
 const Footer: FC = () => {
     const isMobile = useBreakpointValue({ base: true, md: false }, { ssr: false })
-
-    const footerSocmed: Array<Socmed> = [
-        {
-            label: "LinkedIn",
-            icon: <FontAwesomeIcon icon={faLinkedin} />,
-            href: 'https://www.linkedin.com/in/fery-ramadhan-c-323167150/'
-        },
-        {
-            label: "Github",
-            icon: <FontAwesomeIcon icon={faGithub} />,
-            href: 'https://github.com/feryrmdhn'
-        },
-        {
-            label: "Medium",
-            icon: <FontAwesomeIcon icon={faMedium} />,
-            href: 'https://medium.com/@feryramadhanc_   '
-        }
-    ]
 
     return (
         <Box as="footer" bottom={0} px={10} py={4}>
             <Flex justify={{ base: 'space-between' }} wrap={'wrap'}>
                 {isMobile ?
-                    <Box my='auto'>
-                        <ReusableModal
-                            titleOpen={<FontAwesomeIcon icon={faEllipsis} size='lg' />}
-                            closeModal={false}
-                            element={
-                                <>
-                                    <VStack spacing={5} my={4}>
-                                        {footerSocmed.map((data, i) => (
-                                            <div key={i}>
-                                                <Button
-                                                    as='a'
-                                                    py={3}
-                                                    w='150px'
-                                                    variant='link'
-                                                    background='none'
-                                                    href={data.href}
-                                                    color='white'
-                                                    border={'1px solid'}
-                                                    borderRadius={0}
-                                                    leftIcon={data.icon}
-                                                    _groupHover={{
-                                                        background: 'none',
-                                                        textDecoration: 'none',
-                                                    }}
-                                                >
-                                                    {data.label}
-                                                </Button>
-                                            </div>
-                                        ))}
-                                    </VStack>
-                                </>
-                            }
-                            submitModal={false}
-                        />
-                    </Box>
+                    <Suspense fallback={<div></div>}>
+                        <Box my='auto'>
+                            <ReusableModal
+                                titleOpen={<FontAwesomeIcon icon={faEllipsis} size='lg' />}
+                                closeModal={false}
+                                element={
+                                    <>
+                                        <VStack spacing={5} my={4}>
+                                            {footerSocmed.map((data, i) => (
+                                                <div key={i}>
+                                                    <Button
+                                                        as='a'
+                                                        py={3}
+                                                        w='150px'
+                                                        variant='link'
+                                                        background='none'
+                                                        href={data.href}
+                                                        color='white'
+                                                        border={'1px solid'}
+                                                        borderRadius={0}
+                                                        leftIcon={data.icon}
+                                                        _groupHover={{
+                                                            background: 'none',
+                                                            textDecoration: 'none',
+                                                        }}
+                                                    >
+                                                        {data.label}
+                                                    </Button>
+                                                </div>
+                                            ))}
+                                        </VStack>
+                                    </>
+                                }
+                                submitModal={false}
+                            />
+                        </Box>
+                    </Suspense>
                     :
                     <HStack spacing='24px'>
                         {footerSocmed.map((data, i) => (

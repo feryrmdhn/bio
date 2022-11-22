@@ -7,8 +7,7 @@ import Carousel from "../components/Carousel";
 const data: Array<JobDetails> = [
     {
         slug: 'Middleware',
-        desc: 'This project is a combined project with several pages in one dashboard, Middleware payment aims to make it easier for customers to make transactions on several integrated company projects, both internal and external transaction facilities.',
-        frontend: ['Typescript', 'React', 'Redux-Saga', 'Scss', 'React-Bootstrap', 'Vercel'],
+        desc: 'Middleware payment aims to make it easier for customers to make transactions on several integrated company projects, both internal and external transaction facilities, and also this project is to minimize the cost of the company or in other words reduce the use of third party platform.', frontend: ['Typescript', 'React', 'Redux-Saga', 'Scss', 'React-Bootstrap', 'Vercel'],
         backend: ['Nodejs', 'Typescript', 'Nest', 'Swagger', 'MySQL'],
         image: [
             <img src={require('../assets/img/project/mid1.png')} alt="midlleware1" />,

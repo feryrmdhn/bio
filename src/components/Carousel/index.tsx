@@ -39,4 +39,4 @@ const Carousel: FC<Props> = ({ data }) => {
     )
 }
 
-export default Carousel
+export default Carousel;
