@@ -13,6 +13,7 @@ This project is only about me, apart from documenting the projects I have made, 
   <li>Typescript</li>
   <li>Chakra UI</li>
   <li>Swiper</li>
+  <li>Vercel</li>
 </ul>
 
 ### `Link`
