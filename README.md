@@ -6,6 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This project is only about me, apart from documenting the projects I have made, this is also useful for people or recruiters to get to know me better.
 
+The project was deploying using [Vercel](https://vercel.com/) for cloud hosting.
+
 ### `Technology`
 
 <ul>
@@ -13,7 +15,6 @@ This project is only about me, apart from documenting the projects I have made, 
   <li>Typescript</li>
   <li>Chakra UI</li>
   <li>Swiper</li>
-  <li>Vercel</li>
 </ul>
 
 ### `Link`
