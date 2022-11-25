@@ -3,14 +3,14 @@ import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, 
 import { ModalProps } from "../../types";
 import '../../assets/style/index.css';
 
-const ReusableModal: FC<ModalProps> = ({ titleOpen, title, closeModal, submit, element, ...props }) => {
+const ReusableModal: FC<ModalProps> = ({ titleOpen, title, closeModal, submit, element, isCentered, ...props }) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
         <>
             <Button variant={'ghost'} onClick={onOpen}>{titleOpen}</Button>
 
-            <Modal size={'xs'} isOpen={isOpen} onClose={onClose} isCentered>
+            <Modal size={'xs'} isOpen={isOpen} onClose={onClose} isCentered={isCentered}>
                 <ModalOverlay />
                 <ModalContent className="modal-glass-effect">
                     <ModalHeader>{title}</ModalHeader>

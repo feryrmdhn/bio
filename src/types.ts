@@ -68,6 +68,7 @@ export interface ModalProps {
     titleOpen: ReactElement<any> | string;
     title?: string;
     submit?: () => void;
+    isCentered: boolean;
     element: ReactElement<any>;
     closeModal: boolean;
     submitModal: boolean | undefined;
