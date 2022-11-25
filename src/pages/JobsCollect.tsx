@@ -41,7 +41,7 @@ const JobsCollect: FC = () => {
     let limitData: number = arrJob.length
     let key: Array<string> = ["name"]
 
-    const onchangeInput = (_e: ChangeEvent<HTMLInputElement>) => {
+    const onchangeInput = () => {
         setSearch(refs.current.value)
     }
 
