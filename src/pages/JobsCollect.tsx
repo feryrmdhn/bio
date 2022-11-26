@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, MutableRefObject, useEffect, useRef, useState } from "react";
+import { FC, ChangeEvent, useEffect, useState } from "react";
 import {
     Accordion,
     AccordionButton,
@@ -26,7 +26,6 @@ import { Jobs } from "../types";
 import { SearchIcon } from "@chakra-ui/icons";
 
 const JobsCollect: FC = () => {
-    const refs = useRef() as MutableRefObject<HTMLInputElement>
     const isMobile = useBreakpointValue({ base: true, md: false }, { ssr: false })
     const { slug } = useParams<string>()
     const [limit, setLimit] = useState<number>(3)
@@ -41,8 +40,8 @@ const JobsCollect: FC = () => {
     let limitData: number = arrJob.length
     let key: Array<string> = ["name"]
 
-    const onchangeInput = () => {
-        setSearch(refs.current.value)
+    const onchangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+        setSearch(e.target.value)
     }
 
     return (
@@ -74,7 +73,7 @@ const JobsCollect: FC = () => {
                                             <Input
                                                 name="search"
                                                 onChange={onchangeInput}
-                                                ref={refs}
+                                                value={search}
                                                 placeholder='Search'
                                                 size='md'
                                             />
@@ -88,8 +87,8 @@ const JobsCollect: FC = () => {
                                         <Input
                                             name="search"
                                             onChange={onchangeInput}
-                                            ref={refs}
-                                            placeholder='Search..'
+                                            value={search}
+                                            placeholder='Search'
                                             size='md'
                                         />
                                     </InputGroup>
@@ -100,7 +99,7 @@ const JobsCollect: FC = () => {
                         </AccordionItem>
                     </Accordion>
                     <div className="fadeInUp">
-                        <Text
+                        < Text
                             fontSize={18}
                             fontFamily='monospace'
                             color={colorText}
@@ -115,7 +114,7 @@ const JobsCollect: FC = () => {
                         >
                             {search ?
                                 <>
-                                    {arrJob.filter((item) => key.some((name) => item[name].toLowerCase().includes(search))).map(data => (
+                                    {arrJob.filter((item) => key.some((name) => item[name].toLowerCase().includes(search.toLowerCase()))).map(data => (
                                         <GridItem key={data.id}>
                                             <CardJobs name={data.name} href={data.href} category={data.category} />
                                         </GridItem>
