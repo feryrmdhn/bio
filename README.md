@@ -19,4 +19,4 @@ The project was deploying using [Vercel](https://vercel.com/) hosting platform.
 
 ### `Link`
 
-To see it, please visit this site : [fery.tech](https://www.fery.tech/)
+To see it, please visit this site : [feryrmdhn.my.id](https://www.feryrmdhn.my.id/)
