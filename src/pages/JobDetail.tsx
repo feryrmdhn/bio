@@ -5,6 +5,17 @@ import { JobDetails } from "../types";
 import Carousel from "../components/Carousel";
 
 const data: Array<JobDetails> = [
+     {
+        slug: 'Eduqat Dashboard',
+        desc: 'Eduqat is a digital education platform based on artificial intelligence (AI). Through this dashboard that is used to manage schools, classes, courses, and their users. This also has an excellent feature from Eduqat, namely creating an AI-based school website display.',
+        frontend: ['React', 'Redux-Thunk', 'Styled-component', 'AWS', 'Ant Design'],
+        backend: ['Nodejs', 'AWS', 'Serverless', 'Postman', 'Dynamo DB'],
+        image: [
+            <img src={require('../assets/img/project/edu1.png')} alt="eduqat1" />,
+            <img src={require('../assets/img/project/edu2.png')} alt="eduqat2" />,
+            <img src={require('../assets/img/project/edu3.png')} alt="eduqat3" />,
+        ]
+    },
     {
         slug: 'Middleware',
         desc: 'Middleware payment aims to make it easier for customers to make transactions on several integrated company projects, both internal and external transaction facilities, and also this project is to minimize the cost of the company or in other words reduce the use of third party platform.', frontend: ['Typescript', 'React', 'Redux-Saga', 'Scss', 'React-Bootstrap', 'Vercel'],
