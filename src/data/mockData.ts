@@ -172,6 +172,18 @@ export const myJob: Array<Jobs> = [
         name: 'Next Context',
         href: 'https://github.com/feryrmdhn/nextjs-context',
         category: 'personal'
+    },
+    {
+        id: 9,
+        name: 'React with Drag n Drop',
+        href: 'https://github.com/feryrmdhn/lms-simple-crud',
+        category: 'personal'
+    },
+    {
+        id: 10,
+        name: 'Eduqat Dashboard',
+        href: 'Eduqat Dashboard',
+        category: 'company'
     }
 ]
 
