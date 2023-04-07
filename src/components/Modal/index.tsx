@@ -20,11 +20,7 @@ const ReusableModal: FC<ModalProps> = ({ titleOpen, title, closeModal, submit, e
                     </ModalBody>
                     <ModalFooter>
                         <>
-                            {closeModal ?
-                                <Button colorScheme='blue' mr={3} onClick={onClose}>Close</Button>
-                                :
-                                null
-                            }
+                            {closeModal && <Button colorScheme='blue' mr={3} onClick={onClose}>Close</Button>}
                             {props.submitModal ?? <Button variant='ghost' onClick={submit} >Submit</Button>}
                         </>
                     </ModalFooter>
