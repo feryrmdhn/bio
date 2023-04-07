@@ -81,7 +81,7 @@ const JobsCollect: FC = () => {
                                     </Box>
                                 }
                             </Flex>
-                            {isMobile ?
+                            {isMobile &&
                                 <AccordionPanel pb={4} px={1}>
                                     <InputGroup>
                                         <Input
@@ -93,8 +93,6 @@ const JobsCollect: FC = () => {
                                         />
                                     </InputGroup>
                                 </AccordionPanel>
-                                :
-                                null
                             }
                         </AccordionItem>
                     </Accordion>
