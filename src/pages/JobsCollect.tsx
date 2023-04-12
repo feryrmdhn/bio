@@ -129,9 +129,7 @@ const JobsCollect: FC = () => {
                             }
                         </Grid>
                         <Center>
-                            {arrJob.slice(0, limit).length === limitData ?
-                                null
-                                :
+                            {arrJob.slice(0, limit).length !== limitData &&
                                 <Button variant='outline' size='sm' mb={10} onClick={() => setLimit(limit + 3)}>Load More...</Button>
                             }
                         </Center>
