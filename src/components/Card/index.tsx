@@ -38,4 +38,4 @@ const CardJobs: FC<Jobs> = ({ name, href, category }) => {
     )
 }
 
-export default CardJobs
+export default CardJobs;
